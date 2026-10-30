@@ -28,4 +28,6 @@ After closing out any ticket (checking off its checklist and committing), tell t
 
 The starting idea is in `.scratch/idea.md`. Product scope, architecture and engineering rules go here once `/to-spec` has settled them.
 
+匯入攻略的完整操作流程見根目錄 `AGENTS.md`(Codex 與 Claude Code 共用)。
+
 Once the project can be started, register it in ProjectHub with `/projecthub-register`; `README.md` is the Guide ProjectHub shows.
