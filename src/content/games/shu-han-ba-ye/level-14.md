@@ -48,6 +48,9 @@ specialEvents:
   - 紀靈周圍有四名刀兵，只要紀靈未撤退這些刀兵會無限復活，不必費心清除
   - 楊弘混入百姓之中，找到並擊退他即可取得天仙洞衣，並解鎖「火眼金睛」挑戰；若楊弘逃跑，他會在之後的「袁術殲滅戰」再度出現
   - 每誤殺一名百姓，劉備的 HP 上限會永久降低 2 點，務必謹慎辨認
+relatedLevels:
+  - levelId: level-20
+    relation: 楊弘若在本關逃脫，會在第 20 關「袁術殲滅戰」再度出現，擊殺後仍可取得天仙洞衣
 sourceUrl: https://www.taptap.cn/topic/8952800
 sourceLang: zh-Hans
 ---
