@@ -45,6 +45,8 @@ relatedLevels:
     relation: 挑戰卅六「姻緣天定」的前提，是第 1 關「大興山之戰」已觸發張飛救女孩的劇情
   - levelId: level-27
     relation: 若本關選擇讓廖化護送馬車，且過關時廖化未被追上、也未被擊退，他會提前於第 27 關「穰山突圍戰」加入；否則要到更後面的荊州相關關卡才會加入
+  - levelId: level-60
+    relation: 本關是否取得胡華家書並讓胡班加入，會決定胡班能否在第 60 關「荊州破圍戰」出場
 sourceUrl: https://www.taptap.cn/topic/8953298
 sourceLang: zh-Hans
 ---

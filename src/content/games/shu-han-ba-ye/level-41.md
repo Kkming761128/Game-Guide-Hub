@@ -7,7 +7,8 @@ treasures:
   - name: 米、麥、活血草
     condition: 分別位於城外鹿砦、城內兵營與村莊各處
   - name: 太阿
-    condition: 友軍存活 6 人以上即可取得，效果為輔助精神力 60；若本關未取得，後續「關羽荊州」相關關卡會觸發陸遜贈劍的劇情，仍可補拿
+    condition: 友軍存活 6 人以上即可取得，效果為輔助精神力 60；若本關未取得，第 59 關「水淹七軍」過場時陸遜會贈送太阿，仍可補拿
+    relatedLevel: level-59
 coordinateTreasures:
   - name: 二階寶石、碧靈丹或活血草（三選一彩蛋）
     coordinates: 1，19
@@ -22,6 +23,8 @@ specialEvents:
 relatedLevels:
   - levelId: level-40
     relation: 第 40 關「桂陽攻擊戰」結束時的紅藍分支，其中一條路線會進入本關
+  - levelId: level-59
+    relation: 若本關未取得太阿，第 59 關「水淹七軍」過場時陸遜會贈送太阿
 sourceUrl: https://www.taptap.cn/topic/8982374
 sourceLang: zh-Hans
 ---
