@@ -1,0 +1,14 @@
+# Dependencies and build output
+node_modules/
+dist/
+build/
+.venv/
+__pycache__/
+*.egg-info/
+
+# Local env and editor state
+.env
+.env.local
+.vscode/
+.DS_Store
+Thumbs.db
