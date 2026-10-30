@@ -56,6 +56,15 @@ const treasures = level.data.treasures.map((treasure) => ({
   }
 
   {
+    level.data.seal && (
+      <>
+        <h2>印綬</h2>
+        <p>{level.data.seal}</p>
+      </>
+    )
+  }
+
+  {
     level.data.specialEvents.length > 0 && (
       <>
         <h2>特殊劇情</h2>
