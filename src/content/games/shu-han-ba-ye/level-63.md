@@ -31,6 +31,8 @@ specialEvents:
 relatedLevels:
   - levelId: level-61
     relation: 本關可從潘璋身上奪回第 61 關「臨沮生死戰」結束後丟失的青龍偃月刀
+  - levelId: level-64
+    relation: 若本關未能奪回青龍偃月刀，第 64 關「夷道進擊戰」由關興單挑潘璋即可補拿
 sourceUrl: https://www.taptap.cn/topic/9028599
 sourceLang: zh-Hans
 ---
