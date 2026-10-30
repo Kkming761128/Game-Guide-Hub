@@ -24,6 +24,7 @@ treasures:
     condition: 噩夢難度擊退城內的張角可得；地獄難度敵軍開城門後，左側四個張角其中一個會掉落
   - name: 太平要術
     condition: 不可擊退管亥，否則無法獲得；這也是會影響後續關卡寶物取得的禁忌提醒
+    relatedLevel: level-09
 coordinateTreasures:
   - name: 一階寶石、豆、金錢 ×1000（彩蛋獎勵）
     coordinates: 0，2
@@ -49,6 +50,8 @@ relatedLevels:
     relation: 延續第 1 關救女孩事件的劇情走向
   - levelId: level-03
     relation: 本關過關後，故事會推進到第 3 關「石門攻擊戰」
+  - levelId: level-09
+    relation: 本關管亥若逃走的劇情走向，是第 9 關「北海救援戰」取得太平要術的另一個管道
 sourceUrl: https://www.taptap.cn/topic/8952177
 sourceLang: zh-Hans
 ---
