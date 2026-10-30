@@ -5,18 +5,43 @@ levelId: level-03
 title: 石門攻擊戰
 treasures:
   - name: 黃金鎧
-    condition: 親自救援簡雍即可獲得，可提升輔助攻擊格擋
+    condition: 親自救援簡雍即可獲得，可提升輔助攻擊格擋 25%
   - name: 柳葉甲
     condition: 親自救援公孫瓚即可獲得，攻擊範圍變為八向，並能防止連擊的第二擊
+  - name: 殘卷·飛
+    condition: 前往浮生處觸發劇情，支付 500 金錢即可取得
+    coordinates: 26，21
+  - name: 特技書（真實傷害）
+    condition: 前往浮生處觸發劇情，不支付 500 金錢即可取得（跟殘卷·飛二選一）
+    coordinates: 26，21
+  - name: 三尖刀（強化反擊 120%）
+    condition: 彩蛋座標獎勵，原文未說明觸發條件
+    coordinates: 15，4
+  - name: 雙股劍
+    condition: 彩蛋座標獎勵，原文未說明觸發條件
+    coordinates: 15，4
+  - name: 士氣果、攻擊果（彩蛋獎勵）
+    condition: 彩蛋座標獎勵，原文未明確標示兩者如何對應，原文未說明觸發條件
+    coordinates: 27，6
+  - name: 士氣果
+    condition: 逃跑劇情後，擊退或單挑張純即可獲得
+  - name: 麥 ×3
+    condition: 城外鹿砦、城內左鹿砦，或在逃跑劇情前擊退張純即可獲得
+  - name: 防禦果
+    condition: 擊退張舉即可獲得
+  - name: 正氣丸
+    condition: 位於城內右鹿砦
+  - name: 碧靈丹
+    condition: 擊退速僕丸即可獲得
 storyChoices:
   - description: 優先救援簡雍還是公孫瓚
     options:
       - 救援簡雍：取得黃金鎧；下一關「徐州破圍戰」的回合上限會是 15 回合
       - 救援公孫瓚：取得柳葉甲；下一關「徐州破圍戰」的回合上限會是 12 回合
       - 本關沒拿到的另一件鎧甲，會在下一關補給
-  - description: 在地圖特定座標觸發的劇情抉擇
+  - description: 在浮生處（座標 26，21）觸發的劇情抉擇
     options:
-      - 支付 500 金錢：取得殘卷
+      - 支付 500 金錢：取得殘卷·飛
       - 不支付：改為取得特技書（真實傷害）
 seal: 須在被突圍、救援被圍友軍，並攻入石門城後才算完成
 specialEvents:

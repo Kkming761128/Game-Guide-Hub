@@ -84,6 +84,8 @@ const nextLevel = currentIndex < gameLevels.length - 1 ? gameLevels[currentIndex
           {treasures.map((treasure) => (
             <li>
               <strong>{treasure.name}</strong>：{treasure.condition}
+              {treasure.coordinates && <> （座標：{treasure.coordinates}）</>}
+              {treasure.requiresSkin && <> （需要皮膚：{treasure.requiresSkin}）</>}
               {treasure.relatedLevelTarget && (
                 <>
                   （關聯：

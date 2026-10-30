@@ -15,6 +15,8 @@ const treasure = z.object({
   name: z.string(),
   condition: z.string(),
   relatedLevel: z.string().optional(),
+  coordinates: z.string().optional(),
+  requiresSkin: z.string().optional(),
 });
 
 const relatedLevel = z.object({
