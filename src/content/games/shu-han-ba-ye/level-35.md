@@ -42,6 +42,8 @@ specialEvents:
 relatedLevels:
   - levelId: level-46
     relation: 本關向行腳商人購買吳子兵法或鐵鞭，會決定第 46 關「雒城前哨戰」李嚴自帶的武器
+  - levelId: level-51
+    relation: 若本關未取得吳子兵法，第 51 關「葭萌解圍戰」可讓魏延與楊柏對話補拿
 sourceUrl: https://www.taptap.cn/topic/8953983
 sourceLang: zh-Hans
 ---
