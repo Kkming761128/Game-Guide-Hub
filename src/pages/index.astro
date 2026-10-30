@@ -1,0 +1,23 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { gamePath } from "../lib/urls";
+
+const games = await getCollection("games");
+---
+
+<BaseLayout title="Game Guide Hub">
+  <h1>Game Guide Hub</h1>
+  <ul class="game-grid">
+    {
+      games.map((game) => (
+        <li>
+          <a class="card" href={gamePath(game.data.slug)}>
+            <strong>{game.data.title}</strong>
+            {game.data.summary && <p>{game.data.summary}</p>}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>

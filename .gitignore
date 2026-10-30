@@ -2,6 +2,7 @@
 node_modules/
 dist/
 build/
+.astro/
 .venv/
 __pycache__/
 *.egg-info/

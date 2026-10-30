@@ -1,0 +1,16 @@
+---
+import { levelPath } from "../lib/urls";
+
+interface Props {
+  gameSlug: string;
+  levelId: string;
+  levelNumber: number;
+  title: string;
+}
+
+const { gameSlug, levelId, levelNumber, title } = Astro.props;
+---
+
+<li>
+  <a class="card" href={levelPath(gameSlug, levelId)}>第 {levelNumber} 關：{title}</a>
+</li>

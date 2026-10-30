@@ -1,0 +1,83 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { gamePath, levelPath } from "../../lib/urls";
+
+export async function getStaticPaths() {
+  const levels = await getCollection("levels");
+  return levels.map((level) => ({
+    params: { game: level.data.game, level: level.data.levelId },
+    props: { level },
+  }));
+}
+
+const { level } = Astro.props;
+const { Content } = await render(level);
+
+const allLevels = await getCollection("levels");
+const findLevel = (levelId: string) =>
+  allLevels.find((candidate) => candidate.data.game === level.data.game && candidate.data.levelId === levelId);
+
+const relatedLevels = level.data.relatedLevels.map((link) => ({ ...link, target: findLevel(link.levelId) }));
+const treasures = level.data.treasures.map((treasure) => ({
+  ...treasure,
+  relatedLevelTarget: treasure.relatedLevel ? findLevel(treasure.relatedLevel) : undefined,
+}));
+---
+
+<BaseLayout title={`第 ${level.data.levelNumber} 關：${level.data.title}`}>
+  <p><a href={gamePath(level.data.game)}>← 關卡列表</a></p>
+  <h1>第 {level.data.levelNumber} 關：{level.data.title}</h1>
+
+  <Content />
+
+  {
+    level.data.treasures.length > 0 && (
+      <>
+        <h2>寶物</h2>
+        <ul class="treasure-list">
+          {treasures.map((treasure) => (
+            <li>
+              <strong>{treasure.name}</strong>：{treasure.condition}
+              {treasure.relatedLevelTarget && (
+                <>
+                  （關聯：
+                  <a href={levelPath(level.data.game, treasure.relatedLevelTarget.data.levelId)}>
+                    第 {treasure.relatedLevelTarget.data.levelNumber} 關：{treasure.relatedLevelTarget.data.title}
+                  </a>
+                  ）
+                </>
+              )}
+            </li>
+          ))}
+        </ul>
+      </>
+    )
+  }
+
+  {
+    relatedLevels.length > 0 && (
+      <>
+        <h2>關卡關聯</h2>
+        <ul class="related-levels">
+          {relatedLevels.map((link) =>
+            link.target ? (
+              <li>
+                <a href={levelPath(level.data.game, link.target.data.levelId)}>
+                  第 {link.target.data.levelNumber} 關：{link.target.data.title}
+                </a>
+                　－　{link.relation}
+              </li>
+            ) : (
+              <li>{link.relation}（找不到關卡 {link.levelId}）</li>
+            ),
+          )}
+        </ul>
+      </>
+    )
+  }
+
+  <p class="source-link">
+    <a href={level.data.sourceUrl} target="_blank" rel="noopener noreferrer">原文出處</a>
+  </p>
+</BaseLayout>
