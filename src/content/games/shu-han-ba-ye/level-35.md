@@ -39,6 +39,9 @@ specialEvents:
   - 滿足特定條件後，過場時夏侯涓會正式加入我軍
   - 挑戰十九「良禽擇木」：成功說服霍峻即可完成
   - 挑戰卅三「天賜商機」：觸發行腳商人事件即可完成
+relatedLevels:
+  - levelId: level-46
+    relation: 本關向行腳商人購買吳子兵法或鐵鞭，會決定第 46 關「雒城前哨戰」李嚴自帶的武器
 sourceUrl: https://www.taptap.cn/topic/8953983
 sourceLang: zh-Hans
 ---
