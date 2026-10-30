@@ -31,6 +31,8 @@ relatedLevels:
     relation: 紅藍分支其中一條路線，可前往第 41 關「南郡奪取戰」
   - levelId: level-42
     relation: 紅藍分支另一條路線，可前往第 42 關「北道阻擊戰」
+  - levelId: level-43f
+    relation: 若紅條大於藍條，會進入幻想線，第 43f 關「幻想線 第43關：成都突襲戰」是幻想線的第一關
 sourceUrl: https://www.taptap.cn/topic/8982331
 sourceLang: zh-Hans
 ---
