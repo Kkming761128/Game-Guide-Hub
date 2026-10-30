@@ -1,10 +1,10 @@
 ---
-import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import LevelCard from "../../components/LevelCard.astro";
+import SearchBox from "../../components/SearchBox.astro";
+import { getGames } from "../../lib/games";
 
 export async function getStaticPaths() {
-  const games = await getCollection("games");
+  const games = await getGames();
   return games.map((game) => ({
     params: { game: game.data.slug },
     props: { game },
@@ -12,11 +12,6 @@ export async function getStaticPaths() {
 }
 
 const { game } = Astro.props;
-
-const allLevels = await getCollection("levels");
-const levels = allLevels
-  .filter((level) => level.data.game === game.data.slug)
-  .sort((a, b) => a.data.levelNumber - b.data.levelNumber);
 ---
 
 <BaseLayout title={game.data.title}>
@@ -24,16 +19,5 @@ const levels = allLevels
   <h1>{game.data.title}</h1>
   {game.data.summary && <p>{game.data.summary}</p>}
 
-  <ul class="level-list">
-    {
-      levels.map((level) => (
-        <LevelCard
-          gameSlug={game.data.slug}
-          levelId={level.data.levelId}
-          levelNumber={level.data.levelNumber}
-          title={level.data.title}
-        />
-      ))
-    }
-  </ul>
+  <SearchBox gameSlug={game.data.slug} />
 </BaseLayout>

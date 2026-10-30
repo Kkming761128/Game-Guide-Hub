@@ -1,0 +1,43 @@
+---
+interface Props {
+  gameSlug: string;
+}
+
+const { gameSlug } = Astro.props;
+const indexUrl = `${import.meta.env.BASE_URL.replace(/\/$/, "")}/${gameSlug}/search-index.json`;
+---
+
+<div class="search-box" data-index-url={indexUrl} data-game-slug={gameSlug}>
+  <input type="search" placeholder="搜尋關卡編號、關卡名稱或寶物名稱" aria-label="搜尋關卡" />
+  <ul class="level-list search-results"></ul>
+</div>
+
+<script>
+  import { filterLevels, type SearchIndexEntry } from "../lib/searchLevels";
+  import { levelPath } from "../lib/urls";
+
+  const container = document.querySelector<HTMLDivElement>(".search-box")!;
+  const input = container.querySelector<HTMLInputElement>("input")!;
+  const results = container.querySelector<HTMLUListElement>(".search-results")!;
+  const indexUrl = container.dataset.indexUrl!;
+  const gameSlug = container.dataset.gameSlug!;
+
+  const toCard = (entry: SearchIndexEntry) => {
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+    a.className = "card";
+    a.href = levelPath(gameSlug, entry.levelId);
+    a.textContent = `第 ${entry.levelNumber} 關：${entry.title}`;
+    li.appendChild(a);
+    return li;
+  };
+
+  fetch(indexUrl)
+    .then((response) => response.json())
+    .then((index: SearchIndexEntry[]) => {
+      const render = (query: string) => results.replaceChildren(...filterLevels(index, query).map(toCard));
+
+      render("");
+      input.addEventListener("input", () => render(input.value));
+    });
+</script>

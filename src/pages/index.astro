@@ -1,9 +1,9 @@
 ---
-import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { gamePath } from "../lib/urls";
+import { getGames } from "../lib/games";
 
-const games = await getCollection("games");
+const games = await getGames();
 ---
 
 <BaseLayout title="Game Guide Hub">
