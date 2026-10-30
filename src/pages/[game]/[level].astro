@@ -27,6 +27,19 @@ const coordinateTreasures = level.data.coordinateTreasures.map((treasure) => ({
   ...treasure,
   relatedLevelTarget: treasure.relatedLevel ? findLevel(treasure.relatedLevel) : undefined,
 }));
+const coordinateGroups = coordinateTreasures.reduce<{ coordinates: string; items: typeof coordinateTreasures }[]>(
+  (groups, treasure) => {
+    const key = treasure.coordinates ?? "";
+    const group = groups.find((candidate) => candidate.coordinates === key);
+    if (group) {
+      group.items.push(treasure);
+    } else {
+      groups.push({ coordinates: key, items: [treasure] });
+    }
+    return groups;
+  },
+  [],
+);
 
 const gameLevels = allLevels
   .filter((candidate) => candidate.data.game === level.data.game)
@@ -85,20 +98,25 @@ const nextLevel = currentIndex < gameLevels.length - 1 ? gameLevels[currentIndex
       <>
         <h2>座標寶物</h2>
         <ul class="treasure-list">
-          {coordinateTreasures.map((treasure) => (
+          {coordinateGroups.map((group) => (
             <li>
-              {treasure.coordinates && <>（座標：{treasure.coordinates}） </>}
-              <strong>{treasure.name}</strong>：{treasure.condition}
-              {treasure.requiresSkin && <> （需要角色皮膚：{treasure.requiresSkin}）</>}
-              {treasure.relatedLevelTarget && (
+              {group.coordinates && <>（座標：{group.coordinates}） </>}
+              {group.items.map((treasure, index) => (
                 <>
-                  （關聯：
-                  <a href={levelPath(level.data.game, treasure.relatedLevelTarget.data.levelId)}>
-                    第 {treasure.relatedLevelTarget.data.levelNumber} 關：{treasure.relatedLevelTarget.data.title}
-                  </a>
-                  ）
+                  {index > 0 && "，"}
+                  <strong>{treasure.name}</strong>
+                  {treasure.requiresSkin && <> （需要角色皮膚：{treasure.requiresSkin}）</>}
+                  {treasure.relatedLevelTarget && (
+                    <>
+                      （關聯：
+                      <a href={levelPath(level.data.game, treasure.relatedLevelTarget.data.levelId)}>
+                        第 {treasure.relatedLevelTarget.data.levelNumber} 關：{treasure.relatedLevelTarget.data.title}
+                      </a>
+                      ）
+                    </>
+                  )}
                 </>
-              )}
+              ))}
             </li>
           ))}
         </ul>

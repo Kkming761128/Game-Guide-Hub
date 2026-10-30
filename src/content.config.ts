@@ -15,7 +15,13 @@ const treasure = z.object({
   name: z.string(),
   condition: z.string(),
   relatedLevel: z.string().optional(),
-  coordinates: z.string().optional(),
+  requiresSkin: z.string().optional(),
+});
+
+const coordinateTreasure = z.object({
+  name: z.string(),
+  coordinates: z.string(),
+  relatedLevel: z.string().optional(),
   requiresSkin: z.string().optional(),
 });
 
@@ -37,7 +43,7 @@ const levels = defineCollection({
     levelId: z.string(),
     title: z.string(),
     treasures: z.array(treasure).default([]),
-    coordinateTreasures: z.array(treasure).default([]),
+    coordinateTreasures: z.array(coordinateTreasure).default([]),
     storyChoices: z.array(storyChoice).default([]),
     seal: z.string().optional(),
     specialEvents: z.array(z.string()).default([]),

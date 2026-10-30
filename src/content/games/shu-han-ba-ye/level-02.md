@@ -26,10 +26,8 @@ treasures:
     condition: 不可擊退管亥，否則無法獲得；這也是會影響後續關卡寶物取得的禁忌提醒
 coordinateTreasures:
   - name: 一階寶石、豆、金錢 ×1000（彩蛋獎勵）
-    condition: 原文僅標示為「本關彩蛋座標」，未說明觸發條件
     coordinates: 0，2
   - name: 轉生丹、攻擊果，或落空（彩蛋獎勵）
-    condition: 原文僅標示為「本關彩蛋座標」，未說明觸發條件
     coordinates: 20，7
 storyChoices:
   - description: 如何處理嚴政的部隊

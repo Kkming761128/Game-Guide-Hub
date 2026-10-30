@@ -20,19 +20,14 @@ treasures:
     condition: 擊退速僕丸即可獲得
 coordinateTreasures:
   - name: 殘卷·飛
-    condition: 前往浮生處觸發劇情，支付 500 金錢即可取得
     coordinates: 26，21
   - name: 特技書（真實傷害）
-    condition: 前往浮生處觸發劇情，不支付 500 金錢即可取得（跟殘卷·飛二選一）
     coordinates: 26，21
   - name: 三尖刀（強化反擊 120%）
-    condition: 彩蛋座標獎勵，原文未說明觸發條件
     coordinates: 15，4
   - name: 雙股劍
-    condition: 彩蛋座標獎勵，原文未說明觸發條件
     coordinates: 15，4
   - name: 士氣果、攻擊果（彩蛋獎勵）
-    condition: 彩蛋座標獎勵，原文未明確標示兩者如何對應，原文未說明觸發條件
     coordinates: 27，6
 storyChoices:
   - description: 優先救援簡雍還是公孫瓚

@@ -20,10 +20,8 @@ treasures:
     condition: 救女孩事件的劇情選項中，選擇「欣然接受」即可取得
 coordinateTreasures:
   - name: 彩蛋獎勵（攻擊/防禦屬性提升，或落空）
-    condition: 內容是提升攻擊 1、提升防禦 1，或是空——三選一，原文未說明觸發條件
     coordinates: 11，0
   - name: 彩蛋獎勵（麥、豆，或落空）
-    condition: 內容是麥、空、豆——三選一，原文未說明觸發條件
     coordinates: 18，0
 storyChoices:
   - description: 救女孩事件的應對方式
