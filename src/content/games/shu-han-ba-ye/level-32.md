@@ -26,7 +26,9 @@ specialEvents:
   - 掩護 7 名以上百姓撤退即可完成挑戰十一「蹈仁履義」
 relatedLevels:
   - levelId: level-33
-    relation: 與第 33 關「當陽之戰 貳」同屬三連戰，裝備無法在中途更換
+    relation: 與第 33、34 關同屬三連戰，裝備無法在中途更換
+  - levelId: level-34
+    relation: 與第 33、34 關同屬三連戰，裝備無法在中途更換
 sourceUrl: https://www.taptap.cn/topic/8953659
 sourceLang: zh-Hans
 ---

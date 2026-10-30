@@ -16,7 +16,9 @@ specialEvents:
   - 本關隱藏劇情較多，「找小孩」（觸發點約在座標 11，39）、「救少女」、「為老叟報仇」各有三種不同結果，需要靠讀檔才能全部體驗；三項全部完成即可達成挑戰十三「扶危濟困」；其餘隱藏劇情不影響過關，可自行摸索
 relatedLevels:
   - levelId: level-32
-    relation: 與第 32 關「當陽之戰 壹」同屬三連戰，裝備無法在中途更換
+    relation: 與第 32、34 關同屬三連戰，裝備無法在中途更換
+  - levelId: level-34
+    relation: 與第 32、33 關同屬三連戰，裝備無法在中途更換
 sourceUrl: https://www.taptap.cn/topic/8953902
 sourceLang: zh-Hans
 ---

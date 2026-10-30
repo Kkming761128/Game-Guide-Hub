@@ -68,6 +68,8 @@ specialEvents:
 relatedLevels:
   - levelId: level-05
     relation: 寶物「手戟」的取得條件之一是尚未取得第 5 關「汜水關之戰 貳」結束時獲得的古錠刀，兩者互斥
+  - levelId: level-36
+    relation: 第 36 關「華容追擊戰」全滅敵軍也能取得同名寶物「手戟」，效果相同
 sourceUrl: https://www.taptap.cn/topic/8952707
 sourceLang: zh-Hans
 ---
