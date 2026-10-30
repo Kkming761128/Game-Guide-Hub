@@ -31,6 +31,10 @@ storyChoices:
 relatedLevels:
   - levelId: level-02
     relation: 延續本關救女孩事件的選擇走向，故事會繼續推進到第 2 關「曲陽圍城戰」
+  - levelId: level-25
+    relation: 本關觸發張飛救女孩的劇情，是第 25 關「千里走單騎」挑戰卅六「姻緣天定」的前提條件
+  - levelId: level-26
+    relation: 本關觸發張飛救女孩的劇情，是第 26 關「葉縣殲敵戰」中夏侯涓以友軍身分出現的前提條件
 sourceUrl: https://www.taptap.cn/topic/8952080
 sourceLang: zh-Hans
 ---
