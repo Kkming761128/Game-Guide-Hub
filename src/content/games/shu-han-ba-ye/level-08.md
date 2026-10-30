@@ -54,6 +54,8 @@ specialEvents:
 relatedLevels:
   - levelId: level-07
     relation: 若上一關「磐河救援戰」完成趙雲對文醜的單挑，本關再完成趙雲對麴義的單挑，即可達成隱藏挑戰「〇三：一身是膽」；上一關若讓趙雲吃皮膚，兵種與果子加成的屬性也會延續到本關
+  - levelId: level-23
+    relation: 本關選擇擊退袁紹或占領糧倉，會決定第 23 關「白馬突襲戰」優先取得寶物「思召」或「酒壺」
 sourceUrl: https://www.taptap.cn/topic/8952501
 sourceLang: zh-Hans
 ---
