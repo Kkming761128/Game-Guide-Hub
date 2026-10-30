@@ -24,6 +24,7 @@ treasures:
     condition: 噩夢難度擊退城內的張角可得；地獄難度敵軍開城門後，左側四個張角其中一個會掉落
   - name: 太平要術
     condition: 不可擊退管亥，否則無法獲得；這也是會影響後續關卡寶物取得的禁忌提醒
+coordinateTreasures:
   - name: 一階寶石、豆、金錢 ×1000（彩蛋獎勵）
     condition: 原文僅標示為「本關彩蛋座標」，未說明觸發條件
     coordinates: 0，2

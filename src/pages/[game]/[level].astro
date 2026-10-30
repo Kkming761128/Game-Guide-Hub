@@ -23,6 +23,10 @@ const treasures = level.data.treasures.map((treasure) => ({
   ...treasure,
   relatedLevelTarget: treasure.relatedLevel ? findLevel(treasure.relatedLevel) : undefined,
 }));
+const coordinateTreasures = level.data.coordinateTreasures.map((treasure) => ({
+  ...treasure,
+  relatedLevelTarget: treasure.relatedLevel ? findLevel(treasure.relatedLevel) : undefined,
+}));
 
 const gameLevels = allLevels
   .filter((candidate) => candidate.data.game === level.data.game)
@@ -77,6 +81,32 @@ const nextLevel = currentIndex < gameLevels.length - 1 ? gameLevels[currentIndex
   }
 
   {
+    level.data.coordinateTreasures.length > 0 && (
+      <>
+        <h2>座標寶物</h2>
+        <ul class="treasure-list">
+          {coordinateTreasures.map((treasure) => (
+            <li>
+              {treasure.coordinates && <>（座標：{treasure.coordinates}） </>}
+              <strong>{treasure.name}</strong>：{treasure.condition}
+              {treasure.requiresSkin && <> （需要角色皮膚：{treasure.requiresSkin}）</>}
+              {treasure.relatedLevelTarget && (
+                <>
+                  （關聯：
+                  <a href={levelPath(level.data.game, treasure.relatedLevelTarget.data.levelId)}>
+                    第 {treasure.relatedLevelTarget.data.levelNumber} 關：{treasure.relatedLevelTarget.data.title}
+                  </a>
+                  ）
+                </>
+              )}
+            </li>
+          ))}
+        </ul>
+      </>
+    )
+  }
+
+  {
     level.data.treasures.length > 0 && (
       <>
         <h2>寶物</h2>
@@ -84,8 +114,7 @@ const nextLevel = currentIndex < gameLevels.length - 1 ? gameLevels[currentIndex
           {treasures.map((treasure) => (
             <li>
               <strong>{treasure.name}</strong>：{treasure.condition}
-              {treasure.coordinates && <> （座標：{treasure.coordinates}）</>}
-              {treasure.requiresSkin && <> （需要皮膚：{treasure.requiresSkin}）</>}
+              {treasure.requiresSkin && <> （需要角色皮膚：{treasure.requiresSkin}）</>}
               {treasure.relatedLevelTarget && (
                 <>
                   （關聯：

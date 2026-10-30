@@ -8,6 +8,17 @@ treasures:
     condition: 親自救援簡雍即可獲得，可提升輔助攻擊格擋 25%
   - name: 柳葉甲
     condition: 親自救援公孫瓚即可獲得，攻擊範圍變為八向，並能防止連擊的第二擊
+  - name: 士氣果
+    condition: 逃跑劇情後，擊退或單挑張純即可獲得
+  - name: 麥 ×3
+    condition: 城外鹿砦、城內左鹿砦，或在逃跑劇情前擊退張純即可獲得
+  - name: 防禦果
+    condition: 擊退張舉即可獲得
+  - name: 正氣丸
+    condition: 位於城內右鹿砦
+  - name: 碧靈丹
+    condition: 擊退速僕丸即可獲得
+coordinateTreasures:
   - name: 殘卷·飛
     condition: 前往浮生處觸發劇情，支付 500 金錢即可取得
     coordinates: 26，21
@@ -23,16 +34,6 @@ treasures:
   - name: 士氣果、攻擊果（彩蛋獎勵）
     condition: 彩蛋座標獎勵，原文未明確標示兩者如何對應，原文未說明觸發條件
     coordinates: 27，6
-  - name: 士氣果
-    condition: 逃跑劇情後，擊退或單挑張純即可獲得
-  - name: 麥 ×3
-    condition: 城外鹿砦、城內左鹿砦，或在逃跑劇情前擊退張純即可獲得
-  - name: 防禦果
-    condition: 擊退張舉即可獲得
-  - name: 正氣丸
-    condition: 位於城內右鹿砦
-  - name: 碧靈丹
-    condition: 擊退速僕丸即可獲得
 storyChoices:
   - description: 優先救援簡雍還是公孫瓚
     options:
