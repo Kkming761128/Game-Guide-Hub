@@ -23,10 +23,35 @@ const treasures = level.data.treasures.map((treasure) => ({
   ...treasure,
   relatedLevelTarget: treasure.relatedLevel ? findLevel(treasure.relatedLevel) : undefined,
 }));
+
+const gameLevels = allLevels
+  .filter((candidate) => candidate.data.game === level.data.game)
+  .sort((a, b) => a.data.levelNumber - b.data.levelNumber);
+const currentIndex = gameLevels.findIndex((candidate) => candidate.data.levelId === level.data.levelId);
+const previousLevel = currentIndex > 0 ? gameLevels[currentIndex - 1] : undefined;
+const nextLevel = currentIndex < gameLevels.length - 1 ? gameLevels[currentIndex + 1] : undefined;
 ---
 
 <BaseLayout title={`第 ${level.data.levelNumber} 關：${level.data.title}`}>
-  <p><a href={gamePath(level.data.game)}>← 關卡列表</a></p>
+  <p>
+    <a href={gamePath(level.data.game)}>← 關卡列表</a>
+    {
+      previousLevel && (
+        <>
+          {" "}
+          ｜ <a href={levelPath(level.data.game, previousLevel.data.levelId)}>← 上一關</a>
+        </>
+      )
+    }
+    {
+      nextLevel && (
+        <>
+          {" "}
+          ｜ <a href={levelPath(level.data.game, nextLevel.data.levelId)}>下一關 →</a>
+        </>
+      )
+    }
+  </p>
   <h1>第 {level.data.levelNumber} 關：{level.data.title}</h1>
 
   <Content />
