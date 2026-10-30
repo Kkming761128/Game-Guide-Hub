@@ -40,7 +40,12 @@ body {
 
 .treasure-list,
 .special-events,
+.story-choices,
 .related-levels {
+  padding-left: 1.25rem;
+}
+
+.story-choices ul {
   padding-left: 1.25rem;
 }
 

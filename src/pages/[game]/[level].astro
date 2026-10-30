@@ -57,6 +57,26 @@ const nextLevel = currentIndex < gameLevels.length - 1 ? gameLevels[currentIndex
   <Content />
 
   {
+    level.data.storyChoices.length > 0 && (
+      <>
+        <h2>劇情選項</h2>
+        <ul class="story-choices">
+          {level.data.storyChoices.map((choice) => (
+            <li>
+              {choice.description}
+              <ul>
+                {choice.options.map((option) => (
+                  <li>{option}</li>
+                ))}
+              </ul>
+            </li>
+          ))}
+        </ul>
+      </>
+    )
+  }
+
+  {
     level.data.treasures.length > 0 && (
       <>
         <h2>寶物</h2>

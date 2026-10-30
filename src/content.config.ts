@@ -22,6 +22,11 @@ const relatedLevel = z.object({
   relation: z.string(),
 });
 
+const storyChoice = z.object({
+  description: z.string(),
+  options: z.array(z.string()),
+});
+
 const levels = defineCollection({
   loader: glob({ pattern: "**/level-*.md", base: "./src/content/games" }),
   schema: z.object({
@@ -30,6 +35,7 @@ const levels = defineCollection({
     levelId: z.string(),
     title: z.string(),
     treasures: z.array(treasure).default([]),
+    storyChoices: z.array(storyChoice).default([]),
     seal: z.string().optional(),
     specialEvents: z.array(z.string()).default([]),
     relatedLevels: z.array(relatedLevel).default([]),
