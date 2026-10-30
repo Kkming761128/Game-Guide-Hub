@@ -30,6 +30,7 @@ const levels = defineCollection({
     levelId: z.string(),
     title: z.string(),
     treasures: z.array(treasure).default([]),
+    specialEvents: z.array(z.string()).default([]),
     relatedLevels: z.array(relatedLevel).default([]),
     sourceUrl: z.string().url(),
     sourceLang: z.enum(["zh-Hans", "ja"]).optional(),
