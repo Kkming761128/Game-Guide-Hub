@@ -33,6 +33,8 @@ specialEvents:
 relatedLevels:
   - levelId: level-04
     relation: 接續上一關「汜水關之戰 壹」，孫堅是否被擊退會影響古錠刀的取得
+  - levelId: level-12
+    relation: 本關結束時取得的古錠刀，會跟第 12 關「廣陵防禦戰」的寶物「手戟」互斥
 sourceUrl: https://www.taptap.cn/topic/8952331
 sourceLang: zh-Hans
 ---

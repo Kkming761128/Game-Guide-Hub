@@ -5,9 +5,11 @@ levelId: level-03
 title: 石門攻擊戰
 treasures:
   - name: 黃金鎧
-    condition: 親自救援簡雍即可獲得，可提升輔助攻擊格擋 25%
+    condition: 親自救援簡雍即可獲得，可提升輔助攻擊格擋 25%；本關沒拿到的話，第 10 關「徐州破圍戰」可以補拿
+    relatedLevel: level-10
   - name: 柳葉甲
-    condition: 親自救援公孫瓚即可獲得，攻擊範圍變為八向，並能防止連擊的第二擊
+    condition: 親自救援公孫瓚即可獲得，攻擊範圍變為八向，並能防止連擊的第二擊；本關沒拿到的話，第 10 關「徐州破圍戰」可以補拿
+    relatedLevel: level-10
   - name: 士氣果
     condition: 逃跑劇情後，擊退或單挑張純即可獲得
   - name: 麥 ×3
@@ -47,6 +49,8 @@ specialEvents:
 relatedLevels:
   - levelId: level-02
     relation: 延續第 2 關的劇情，本關是攻破曲陽城後的下一場戰鬥
+  - levelId: level-10
+    relation: 黃金鎧、柳葉甲本關沒拿到的另一件，可以在第 10 關「徐州破圍戰」補拿
 sourceUrl: https://www.taptap.cn/topic/8952229
 sourceLang: zh-Hans
 ---
