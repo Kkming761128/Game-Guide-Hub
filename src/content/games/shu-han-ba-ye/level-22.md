@@ -47,6 +47,9 @@ specialEvents:
   - 挑戰〇九「捨生取義」：夏侯博全程不撤退即可完成
   - 挑戰十四「伏虎降龍」：擊退許褚即可完成
   - 過場後夏侯博會離隊，他的存活與否會影響日後能否再取得飛刀，建議不要讓他撤退
+relatedLevels:
+  - levelId: level-28
+    relation: 本關夏侯博若全程未撤退，是第 28 關「火燒博望」寶物「飛刀」的取得條件之一
 sourceUrl: https://www.taptap.cn/topic/8953181
 sourceLang: zh-Hans
 ---
