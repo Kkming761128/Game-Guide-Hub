@@ -11,7 +11,8 @@ treasures:
   - name: 兵符
     condition: 擊退曹丕即可取得
   - name: 七星劍
-    condition: 擊退司馬懿即可取得，效果為輔助妨礙策略命中 +20%；若本關未取得，後續「南鄭攻擊戰」達成條件後仍可補拿
+    condition: 擊退司馬懿即可取得，效果為輔助妨礙策略命中 +20%；若本關未取得，第 56 關「南鄭攻擊戰」達成條件後仍可補拿
+    relatedLevel: level-56
 coordinateTreasures:
   - name: 一階寶石、二階寶石、三階寶石
     coordinates: 0，17
@@ -32,6 +33,8 @@ specialEvents:
 relatedLevels:
   - levelId: level-40
     relation: 第 40 關「桂陽攻擊戰」結束時的紅藍分支，其中一條路線會進入本關
+  - levelId: level-56
+    relation: 若本關未取得七星劍，第 56 關「南鄭攻擊戰」是最後的補拿機會
 sourceUrl: https://www.taptap.cn/topic/8982474
 sourceLang: zh-Hans
 ---
