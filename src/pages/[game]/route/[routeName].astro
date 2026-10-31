@@ -21,7 +21,7 @@ export async function getStaticPaths() {
     for (const routeName of routes) {
       paths.push({
         params: { game: game.data.slug, routeName },
-        props: { game, routeName, allRoutes: routes.sort() },
+        props: { game, routeName, allRoutes: [...routes].sort() },
       });
     }
   }
