@@ -3,7 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import SearchBox from "../../components/SearchBox.astro";
 import { getGames } from "../../lib/games";
 import { getCollection } from "astro:content";
-import { routePath } from "../../lib/urls";
+import { homePath, routePath } from "../../lib/urls";
 
 export async function getStaticPaths() {
   const games = await getGames();
@@ -27,7 +27,7 @@ const internalRoutes = [
 
 <BaseLayout title={game.data.title}>
   <p class="top-nav">
-    <a href="../">← 所有遊戲</a>
+    <a href={homePath()}>← 回到首頁</a>
     {internalRoutes.map((route) => (
       <a href={routePath(game.data.slug, route)}>{route}攻略</a>
     ))}

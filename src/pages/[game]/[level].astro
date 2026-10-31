@@ -1,7 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { gamePath, routePath, levelPath } from "../../lib/urls";
+import { homePath, gamePath, routePath, levelPath } from "../../lib/urls";
 
 export async function getStaticPaths() {
   const levels = await getCollection("levels");
@@ -51,7 +51,8 @@ const nextLevel = currentIndex < gameLevels.length - 1 ? gameLevels[currentIndex
 
 <BaseLayout title={`第 ${level.data.levelNumber} 關：${level.data.title}`}>
   <p>
-    <a href={level.data.route ? routePath(level.data.game, level.data.route) : gamePath(level.data.game)}>← 關卡列表</a>
+    <a href={homePath()}>← 回到首頁</a>
+    {" "}｜ <a href={level.data.route ? routePath(level.data.game, level.data.route) : gamePath(level.data.game)}>← 關卡列表</a>
     {
       previousLevel && (
         <>
