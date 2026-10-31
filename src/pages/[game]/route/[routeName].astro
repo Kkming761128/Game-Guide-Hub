@@ -3,7 +3,7 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import SearchBox from "../../../components/SearchBox.astro";
 import { getGames } from "../../../lib/games";
 import { getCollection } from "astro:content";
-import { gamePath } from "../../../lib/urls";
+import { gamePath, routePath } from "../../../lib/urls";
 
 export async function getStaticPaths() {
   const games = await getGames();
@@ -21,19 +21,22 @@ export async function getStaticPaths() {
     for (const routeName of routes) {
       paths.push({
         params: { game: game.data.slug, routeName },
-        props: { game, routeName },
+        props: { game, routeName, allRoutes: routes.sort() },
       });
     }
   }
   return paths;
 }
 
-const { game, routeName } = Astro.props;
+const { game, routeName, allRoutes } = Astro.props;
 ---
 
 <BaseLayout title={`${routeName}攻略 — ${game.data.title}`}>
   <p class="top-nav">
     <a href={gamePath(game.data.slug)}>← {game.data.title}</a>
+    {allRoutes.filter((r: string) => r !== routeName).map((r: string) => (
+      <a href={routePath(game.data.slug, r)}>{r}攻略</a>
+    ))}
     {game.data.externalLinks.map((link) => (
       <a href={link.url} target="_blank" rel="noopener noreferrer">{link.label}</a>
     ))}
