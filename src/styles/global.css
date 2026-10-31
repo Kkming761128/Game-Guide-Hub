@@ -21,6 +21,13 @@ body {
   padding: 0;
 }
 
+.top-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
 .level-list {
   list-style: none;
   padding: 0;

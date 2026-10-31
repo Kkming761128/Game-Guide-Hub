@@ -1,6 +1,11 @@
 import { defineCollection, z } from "astro:content";
 import { glob } from "astro/loaders";
 
+const externalLink = z.object({
+  label: z.string(),
+  url: z.string().url(),
+});
+
 const games = defineCollection({
   loader: glob({ pattern: "**/game.md", base: "./src/content/games" }),
   schema: z.object({
@@ -8,6 +13,7 @@ const games = defineCollection({
     title: z.string(),
     summary: z.string().optional(),
     sourceSite: z.string().url().optional(),
+    externalLinks: z.array(externalLink).default([]),
   }),
 });
 

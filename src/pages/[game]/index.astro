@@ -15,7 +15,12 @@ const { game } = Astro.props;
 ---
 
 <BaseLayout title={game.data.title}>
-  <p><a href="../">← 所有遊戲</a></p>
+  <p class="top-nav">
+    <a href="../">← 所有遊戲</a>
+    {game.data.externalLinks.map((link) => (
+      <a href={link.url} target="_blank" rel="noopener noreferrer">{link.label}</a>
+    ))}
+  </p>
   <h1>{game.data.title}</h1>
   {game.data.summary && <p>{game.data.summary}</p>}
 
