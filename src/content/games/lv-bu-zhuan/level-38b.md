@@ -1,8 +1,9 @@
----
+﻿---
 game: lv-bu-zhuan
 levelNumber: 38
 levelId: level-38b
-title: 霸線 第37關（別路）：逍遙津之戰
+title: 逍遙津之戰（別路）
+route: 霸線
 treasures: []
 specialEvents:
   - 原始攻略將本關標記為「第三十七關（逍遙津之戰）」，與河北之戰同為第 37 關的別支選擇；本站以 levelNumber 38 排序，以避免與路A的河北之戰衝突

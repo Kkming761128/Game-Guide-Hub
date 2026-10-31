@@ -1,8 +1,9 @@
----
+﻿---
 game: lv-bu-zhuan
 levelNumber: 34
 levelId: level-34b
-title: 霸線 第34關：成都入侵戰
+title: 成都入侵戰
+route: 霸線
 treasures:
   - name: 白銀鎧
     condition: 單挑中呂布擊殺趙雲後掉落；注意必須在單挑中打死，直接戰場擊殺無效，且需在其他敵軍全滅後才可擊殺趙雲，否則趙雲會復活

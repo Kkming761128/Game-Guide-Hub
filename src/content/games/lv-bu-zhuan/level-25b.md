@@ -1,8 +1,9 @@
----
+﻿---
 game: lv-bu-zhuan
 levelNumber: 25
 levelId: level-25b
-title: 霸線 第25關：長安之戰三
+title: 長安之戰三
+route: 霸線
 treasures:
   - name: 七星劍
     condition: 觸發呂布對賈詡的單挑並擊敗賈詡後掉落；需在第 22、24 關完成貂蟬對賈詡的單挑劇情作為前提

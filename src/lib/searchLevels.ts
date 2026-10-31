@@ -2,6 +2,7 @@ export interface SearchIndexEntry {
   levelId: string;
   levelNumber: number;
   title: string;
+  route?: string;
   treasureNames: string[];
 }
 

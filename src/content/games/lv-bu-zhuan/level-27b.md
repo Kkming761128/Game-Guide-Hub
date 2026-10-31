@@ -1,8 +1,9 @@
----
+﻿---
 game: lv-bu-zhuan
 levelNumber: 27
 levelId: level-27b
-title: 霸線 第27關：定軍山之戰
+title: 定軍山之戰
+route: 霸線
 treasures: []
 seal: 觸發所有單挑對話劇情，可取得本關印綬
 specialEvents:

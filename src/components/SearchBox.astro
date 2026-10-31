@@ -32,10 +32,39 @@ const indexUrl = `${import.meta.env.BASE_URL.replace(/\/$/, "")}/${gameSlug}/sea
     return li;
   };
 
+  const toRouteHeader = (label: string) => {
+    const li = document.createElement("li");
+    li.className = "route-header";
+    li.textContent = `${label}攻略`;
+    return li;
+  };
+
+  const renderGrouped = (entries: SearchIndexEntry[]) => {
+    const groups = new Map<string, SearchIndexEntry[]>();
+    for (const entry of entries) {
+      const key = entry.route ?? "";
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key)!.push(entry);
+    }
+    const children: HTMLElement[] = [];
+    for (const [route, group] of groups) {
+      if (route) children.push(toRouteHeader(route));
+      children.push(...group.map(toCard));
+    }
+    results.replaceChildren(...children);
+  };
+
   fetch(indexUrl)
     .then((response) => response.json())
     .then((index: SearchIndexEntry[]) => {
-      const render = (query: string) => results.replaceChildren(...filterLevels(index, query).map(toCard));
+      const render = (query: string) => {
+        const filtered = filterLevels(index, query);
+        if (query.trim() === "") {
+          renderGrouped(filtered);
+        } else {
+          results.replaceChildren(...filtered.map(toCard));
+        }
+      };
 
       render("");
       input.addEventListener("input", () => render(input.value));

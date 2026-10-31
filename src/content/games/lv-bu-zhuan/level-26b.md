@@ -1,8 +1,9 @@
----
+﻿---
 game: lv-bu-zhuan
 levelNumber: 26
 levelId: level-26b
-title: 霸線 第26關：馬超迎擊戰
+title: 馬超迎擊戰
+route: 霸線
 treasures: []
 seal: 全滅敵軍，可取得本關印綬
 specialEvents: []

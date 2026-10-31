@@ -1,8 +1,9 @@
----
+﻿---
 game: lv-bu-zhuan
 levelNumber: 22
 levelId: level-22b
-title: 霸線 第22關：長安之戰二
+title: 長安之戰二
+route: 霸線
 treasures: []
 seal: 馬雲祿的血量全程不得低於 100，過關後可取得本關印綬
 specialEvents:

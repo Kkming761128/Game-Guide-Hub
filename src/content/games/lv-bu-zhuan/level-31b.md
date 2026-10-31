@@ -1,8 +1,9 @@
----
+﻿---
 game: lv-bu-zhuan
 levelNumber: 31
 levelId: level-31b
-title: 霸線 第31關：五丈原之戰
+title: 五丈原之戰
+route: 霸線
 treasures:
   - name: 鶴氅
     condition: 讓諸葛亮撤退後掉落；第 33 關陳宮可用此件湊齊賢者套裝

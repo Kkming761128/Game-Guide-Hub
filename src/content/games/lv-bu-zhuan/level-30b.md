@@ -1,8 +1,9 @@
----
+﻿---
 game: lv-bu-zhuan
 levelNumber: 30
 levelId: level-30b
-title: 霸線 第30關：漢水之戰
+title: 漢水之戰
+route: 霸線
 treasures: []
 seal: 觸發關興與關索的劇情，可取得本關印綬
 specialEvents:

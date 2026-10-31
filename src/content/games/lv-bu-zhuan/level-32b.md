@@ -1,8 +1,9 @@
----
+﻿---
 game: lv-bu-zhuan
 levelNumber: 32
 levelId: level-32b
-title: 霸線 第32關：西涼之戰
+title: 西涼之戰
+route: 霸線
 treasures: []
 specialEvents:
   - 目前查到的資料僅有打法說明，完整的印綬條件與寶物尚未找到紀錄

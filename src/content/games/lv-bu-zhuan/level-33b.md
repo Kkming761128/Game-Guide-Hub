@@ -1,8 +1,9 @@
----
+﻿---
 game: lv-bu-zhuan
 levelNumber: 33
 levelId: level-33b
-title: 霸線 第33關：陽平關之戰
+title: 陽平關之戰
+route: 霸線
 treasures: []
 seal: 觸發所有單挑，可取得本關印綬
 specialEvents:

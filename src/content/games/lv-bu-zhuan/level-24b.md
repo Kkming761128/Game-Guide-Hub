@@ -1,8 +1,9 @@
----
+﻿---
 game: lv-bu-zhuan
 levelNumber: 24
 levelId: level-24b
-title: 霸線 第24關：潼關之戰
+title: 潼關之戰
+route: 霸線
 treasures: []
 seal: 觸發武將單挑劇情，可取得本關印綬
 specialEvents:

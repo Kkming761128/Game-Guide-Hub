@@ -1,8 +1,9 @@
----
+﻿---
 game: lv-bu-zhuan
 levelNumber: 35
 levelId: level-35b
-title: 霸線 第35關：許昌之戰
+title: 許昌之戰
+route: 霸線
 treasures:
   - name: 鳳凰羽衣
     condition: 觸發呂布對許褚的隱藏劇情後取得；需在正確時機讓呂布接近許褚觸發對話

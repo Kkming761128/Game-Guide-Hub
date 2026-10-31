@@ -48,6 +48,7 @@ const levels = defineCollection({
     levelNumber: z.number(),
     levelId: z.string(),
     title: z.string(),
+    route: z.string().optional(),
     treasures: z.array(treasure).default([]),
     coordinateTreasures: z.array(coordinateTreasure).default([]),
     storyChoices: z.array(storyChoice).default([]),

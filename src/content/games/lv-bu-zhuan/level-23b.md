@@ -1,8 +1,9 @@
----
+﻿---
 game: lv-bu-zhuan
 levelNumber: 23
 levelId: level-23b
-title: 霸線 第23關：張魯討伐戰
+title: 張魯討伐戰
+route: 霸線
 treasures: []
 seal: 找到地圖右上角張魯的寶藏，即可取得本關印綬
 specialEvents: []

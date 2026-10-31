@@ -16,6 +16,7 @@ export async function GET({ params }: { params: { game: string } }) {
       levelId: level.data.levelId,
       levelNumber: level.data.levelNumber,
       title: level.data.title,
+      route: level.data.route,
       treasureNames: level.data.treasures.map((treasure) => treasure.name),
     }));
 

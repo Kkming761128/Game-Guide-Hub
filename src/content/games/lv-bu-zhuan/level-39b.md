@@ -1,8 +1,9 @@
----
+﻿---
 game: lv-bu-zhuan
 levelNumber: 39
 levelId: level-39b
-title: 霸線 第39關：南皮攻略戰
+title: 南皮攻略戰
+route: 霸線
 treasures: []
 specialEvents:
   - 目前查到的資料僅有打法說明，完整的印綬條件與寶物尚未找到紀錄

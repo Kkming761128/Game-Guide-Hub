@@ -4,8 +4,6 @@ title: 三國志呂布傳
 summary: 以呂布陣營視角推進的三國題材攻略，整理每一關的打法思路、單挑分支與寶物取得條件。
 sourceSite: https://www.taptap.cn
 externalLinks:
-  - label: 霸線攻略
-    url: https://www.taptap.cn/moment/215205418790552810
   - label: 王線攻略
     url: https://www.taptap.cn/moment/221772221989782069
   - label: 帝線攻略

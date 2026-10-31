@@ -1,8 +1,9 @@
----
+﻿---
 game: lv-bu-zhuan
 levelNumber: 29
 levelId: level-29b
-title: 霸線 第29關：街亭之戰
+title: 街亭之戰
+route: 霸線
 treasures:
   - name: 二米一豆
     condition: 觸發陳宮劇情，並且占領地圖內部三個營寨後可取得

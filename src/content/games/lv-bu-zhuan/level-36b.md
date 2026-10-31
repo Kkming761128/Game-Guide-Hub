@@ -1,8 +1,9 @@
----
+﻿---
 game: lv-bu-zhuan
 levelNumber: 36
 levelId: level-36b
-title: 霸線 第36關：合肥之戰
+title: 合肥之戰
+route: 霸線
 treasures:
   - name: 明鏡鎧
     condition: 觸發所有劇情後取得；四組單挑全部完成才算達成條件
