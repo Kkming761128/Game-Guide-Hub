@@ -1,0 +1,44 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import SearchBox from "../../../components/SearchBox.astro";
+import { getGames } from "../../../lib/games";
+import { getCollection } from "astro:content";
+import { gamePath } from "../../../lib/urls";
+
+export async function getStaticPaths() {
+  const games = await getGames();
+  const allLevels = await getCollection("levels");
+
+  const paths = [];
+  for (const game of games) {
+    const routes = [
+      ...new Set(
+        allLevels
+          .filter((l) => l.data.game === game.data.slug && l.data.route)
+          .map((l) => l.data.route as string)
+      ),
+    ];
+    for (const routeName of routes) {
+      paths.push({
+        params: { game: game.data.slug, routeName },
+        props: { game, routeName },
+      });
+    }
+  }
+  return paths;
+}
+
+const { game, routeName } = Astro.props;
+---
+
+<BaseLayout title={`${routeName}攻略 — ${game.data.title}`}>
+  <p class="top-nav">
+    <a href={gamePath(game.data.slug)}>← {game.data.title}</a>
+    {game.data.externalLinks.map((link) => (
+      <a href={link.url} target="_blank" rel="noopener noreferrer">{link.label}</a>
+    ))}
+  </p>
+  <h1>{routeName}攻略</h1>
+
+  <SearchBox gameSlug={game.data.slug} routeFilter={routeName} />
+</BaseLayout>

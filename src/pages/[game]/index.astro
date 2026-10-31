@@ -2,6 +2,8 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import SearchBox from "../../components/SearchBox.astro";
 import { getGames } from "../../lib/games";
+import { getCollection } from "astro:content";
+import { routePath } from "../../lib/urls";
 
 export async function getStaticPaths() {
   const games = await getGames();
@@ -12,11 +14,23 @@ export async function getStaticPaths() {
 }
 
 const { game } = Astro.props;
+
+const allLevels = await getCollection("levels");
+const internalRoutes = [
+  ...new Set(
+    allLevels
+      .filter((l) => l.data.game === game.data.slug && l.data.route)
+      .map((l) => l.data.route as string)
+  ),
+].sort();
 ---
 
 <BaseLayout title={game.data.title}>
   <p class="top-nav">
     <a href="../">← 所有遊戲</a>
+    {internalRoutes.map((route) => (
+      <a href={routePath(game.data.slug, route)}>{route}攻略</a>
+    ))}
     {game.data.externalLinks.map((link) => (
       <a href={link.url} target="_blank" rel="noopener noreferrer">{link.label}</a>
     ))}
