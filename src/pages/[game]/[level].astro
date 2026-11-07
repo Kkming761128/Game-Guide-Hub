@@ -42,7 +42,7 @@ const coordinateGroups = coordinateTreasures.reduce<{ coordinates: string; items
 );
 
 const gameLevels = allLevels
-  .filter((candidate) => candidate.data.game === level.data.game)
+  .filter((candidate) => candidate.data.game === level.data.game && candidate.data.route === level.data.route)
   .sort((a, b) => a.data.levelNumber - b.data.levelNumber);
 const currentIndex = gameLevels.findIndex((candidate) => candidate.data.levelId === level.data.levelId);
 const previousLevel = currentIndex > 0 ? gameLevels[currentIndex - 1] : undefined;
