@@ -60,4 +60,22 @@ const levels = defineCollection({
   }),
 });
 
-export const collections = { games, levels };
+const stratagemItem = z.object({
+  number: z.number(),
+  name: z.string(),
+  condition: z.string(),
+  note: z.string().optional(),
+});
+
+const stratagems = defineCollection({
+  loader: glob({ pattern: "**/stratagems.md", base: "./src/content/games" }),
+  schema: z.object({
+    game: z.string(),
+    title: z.string().default("三十六計"),
+    items: z.array(stratagemItem),
+    sourceUrl: z.string().url(),
+    sourceLang: z.enum(["zh-Hans", "ja"]).optional(),
+  }),
+});
+
+export const collections = { games, levels, stratagems };

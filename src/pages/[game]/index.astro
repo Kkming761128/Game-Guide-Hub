@@ -3,7 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import SearchBox from "../../components/SearchBox.astro";
 import { getGames } from "../../lib/games";
 import { getCollection } from "astro:content";
-import { homePath, routePath } from "../../lib/urls";
+import { homePath, routePath, stratagemsPath } from "../../lib/urls";
 
 export async function getStaticPaths() {
   const games = await getGames();
@@ -23,6 +23,9 @@ const internalRoutes = [
       .map((l) => l.data.route as string)
   ),
 ].sort();
+
+const allStratagems = await getCollection("stratagems");
+const hasStratagems = allStratagems.some((s) => s.data.game === game.data.slug);
 ---
 
 <BaseLayout title={game.data.title}>
@@ -31,6 +34,7 @@ const internalRoutes = [
     {internalRoutes.map((route) => (
       <a href={routePath(game.data.slug, route)}>{route}攻略</a>
     ))}
+    {hasStratagems && <a href={stratagemsPath(game.data.slug)}>三十六計</a>}
     {game.data.externalLinks.map((link) => (
       <a href={link.url} target="_blank" rel="noopener noreferrer">{link.label}</a>
     ))}

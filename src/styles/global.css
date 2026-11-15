@@ -65,6 +65,20 @@ body {
   padding-left: 1.25rem;
 }
 
+.stratagem-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.stratagem-table th,
+.stratagem-table td {
+  text-align: left;
+  padding: 0.5rem;
+  border-bottom: 1px solid color-mix(in srgb, currentColor 15%, transparent);
+  vertical-align: top;
+}
+
 .source-link {
   display: inline-block;
   margin-top: 1.5rem;

@@ -1,0 +1,58 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getGames } from "../../lib/games";
+import { getCollection } from "astro:content";
+import { homePath, gamePath } from "../../lib/urls";
+
+export async function getStaticPaths() {
+  const games = await getGames();
+  const allStratagems = await getCollection("stratagems");
+
+  return allStratagems.map((stratagems) => {
+    const game = games.find((g) => g.data.slug === stratagems.data.game)!;
+    return {
+      params: { game: stratagems.data.game },
+      props: { game, stratagems },
+    };
+  });
+}
+
+const { game, stratagems } = Astro.props;
+const items = [...stratagems.data.items].sort((a, b) => a.number - b.number);
+---
+
+<BaseLayout title={`${stratagems.data.title} — ${game.data.title}`}>
+  <p class="top-nav">
+    <a href={homePath()}>← 回到首頁</a>
+    <a href={gamePath(game.data.slug)}>← {game.data.title}</a>
+  </p>
+  <h1>{stratagems.data.title}</h1>
+
+  <table class="stratagem-table">
+    <thead>
+      <tr>
+        <th>計</th>
+        <th>名稱</th>
+        <th>成就條件</th>
+      </tr>
+    </thead>
+    <tbody>
+      {
+        items.map((item) => (
+          <tr>
+            <td>第 {item.number} 計</td>
+            <td>{item.name}</td>
+            <td>
+              {item.condition}
+              {item.note && <><br /><small>（{item.note}）</small></>}
+            </td>
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+
+  <p class="source-link">
+    <a href={stratagems.data.sourceUrl} target="_blank" rel="noopener noreferrer">原文出處</a>
+  </p>
+</BaseLayout>
