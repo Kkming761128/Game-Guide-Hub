@@ -34,6 +34,7 @@ const items = [...stratagems.data.items].sort((a, b) => a.number - b.number);
         <th>計</th>
         <th>名稱</th>
         <th>成就條件</th>
+        <th>攻略影片</th>
       </tr>
     </thead>
     <tbody>
@@ -45,6 +46,21 @@ const items = [...stratagems.data.items].sort((a, b) => a.number - b.number);
             <td>
               {item.condition}
               {item.note && <><br /><small>（{item.note}）</small></>}
+            </td>
+            <td>
+              {item.videos.length > 0 ? (
+                item.videos.map((video, index) => (
+                  <>
+                    {index > 0 && <br />}
+                    <a href={video.url} target="_blank" rel="noopener noreferrer">
+                      影片{item.videos.length > 1 ? index + 1 : ""}
+                    </a>
+                    {video.provider && <small>（{video.provider}）</small>}
+                  </>
+                ))
+              ) : (
+                <small>暫缺</small>
+              )}
             </td>
           </tr>
         ))

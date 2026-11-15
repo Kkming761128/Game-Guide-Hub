@@ -60,11 +60,17 @@ const levels = defineCollection({
   }),
 });
 
+const stratagemVideo = z.object({
+  url: z.string().url(),
+  provider: z.string().optional(),
+});
+
 const stratagemItem = z.object({
   number: z.number(),
   name: z.string(),
   condition: z.string(),
   note: z.string().optional(),
+  videos: z.array(stratagemVideo).default([]),
 });
 
 const stratagems = defineCollection({
