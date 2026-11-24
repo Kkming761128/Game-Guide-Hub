@@ -79,6 +79,33 @@ body {
   vertical-align: top;
 }
 
+.challenge-section {
+  margin-top: 1.5rem;
+}
+
+.challenge-section-note {
+  font-size: 0.875rem;
+  opacity: 0.8;
+  margin: 0.25rem 0 0.75rem;
+}
+
+.challenge-group {
+  margin-top: 1rem;
+}
+
+.challenge-group h3 {
+  font-size: 1rem;
+  margin: 0 0 0.25rem;
+}
+
+.challenge-link-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
 .source-link {
   display: inline-block;
   margin-top: 1.5rem;

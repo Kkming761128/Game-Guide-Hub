@@ -84,4 +84,33 @@ const stratagems = defineCollection({
   }),
 });
 
-export const collections = { games, levels, stratagems };
+const challengeLink = z.object({
+  url: z.string().url(),
+  label: z.string().optional(),
+  provider: z.string().optional(),
+});
+
+const challengeGroup = z.object({
+  name: z.string(),
+  note: z.string().optional(),
+  links: z.array(challengeLink).default([]),
+});
+
+const challengeSection = z.object({
+  name: z.string(),
+  note: z.string().optional(),
+  groups: z.array(challengeGroup).default([]),
+});
+
+const challenges = defineCollection({
+  loader: glob({ pattern: "**/challenges.md", base: "./src/content/games" }),
+  schema: z.object({
+    game: z.string(),
+    title: z.string().default("挑戰攻略"),
+    sections: z.array(challengeSection),
+    sourceUrl: z.string().url(),
+    sourceLang: z.enum(["zh-Hans", "ja"]).optional(),
+  }),
+});
+
+export const collections = { games, levels, stratagems, challenges };

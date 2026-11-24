@@ -1,0 +1,60 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getGames } from "../../lib/games";
+import { getCollection } from "astro:content";
+import { homePath, gamePath } from "../../lib/urls";
+
+export async function getStaticPaths() {
+  const games = await getGames();
+  const allChallenges = await getCollection("challenges");
+
+  return allChallenges.map((challenges) => {
+    const game = games.find((g) => g.data.slug === challenges.data.game)!;
+    return {
+      params: { game: challenges.data.game },
+      props: { game, challenges },
+    };
+  });
+}
+
+const { game, challenges } = Astro.props;
+---
+
+<BaseLayout title={`${challenges.data.title} — ${game.data.title}`}>
+  <p class="top-nav">
+    <a href={homePath()}>← 回到首頁</a>
+    <a href={gamePath(game.data.slug)}>← {game.data.title}</a>
+  </p>
+  <h1>{challenges.data.title}</h1>
+
+  {
+    challenges.data.sections.map((section) => (
+      <section class="challenge-section">
+        <h2>{section.name}</h2>
+        {section.note && <p class="challenge-section-note">{section.note}</p>}
+        {section.groups.map((group) => (
+          <div class="challenge-group">
+            <h3>
+              {group.name}
+              {group.note && <small>（{group.note}）</small>}
+            </h3>
+            <ul class="challenge-link-list">
+              {group.links.map((link) => (
+                <li>
+                  <a href={link.url} target="_blank" rel="noopener noreferrer">
+                    {link.label ?? "攻略連結"}
+                  </a>
+                  {link.provider && <small>（{link.provider}）</small>}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </section>
+    ))
+  }
+
+  <p class="source-link">
+    <a href={challenges.data.sourceUrl} target="_blank" rel="noopener noreferrer">原文出處</a>
+  </p>
+</BaseLayout>
